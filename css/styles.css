@@ -18,7 +18,19 @@ body {
   font-family: "Roboto", sans-serif;
   color: var(--slate);
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 /* --Header-- */
 .page-header {
   border-bottom: 1px solid var(--cornflowers);
@@ -655,7 +667,7 @@ img {
 .modal-body {
   position: relative;
   width: 408px;
-  height: 584px;
+  max-height: 584px;
   margin: 80px auto 13px auto;
   background-color: var(--white);
 }
@@ -694,10 +706,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 360px;
-  padding-top: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: 360px;
+  margin: 16px 24px 24px 24px;
 }
 .modal-input {
   border: none;
@@ -734,21 +744,55 @@ img {
   width: 360px;
   padding-top: 16px;
 }
-.modal-checkbox {
-  appearance: none;
+.modal-check-text {
+  display: inline-flex;
+  align-items: center;
+  color: var(--lightslate);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0.48px;
+  width: 360px;
 }
 
-.fake-checkbox-click {
-  opacity: 0;
+.modal-check-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--navymodal);
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-checkbox:checked + .fake-checkbox-click {
-  opacity: 1;
+.modal-checkbox {
+}
+
+.modal-check:checked + .modal-check-text .modal-check-icon {
+  background-color: var(--ocean);
+  fill: var(--cloud);
+  border: none;
 }
 .modal-button {
-  display: block;
+  border-radius: 4px;
+  background: var(--iris);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
   padding: 16px 32px;
-  align-items: flex-start;
-  gap: 10px;
+  width: 169px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 24px;
 }
 .modal-close {
   position: absolute;

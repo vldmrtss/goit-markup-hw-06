@@ -461,14 +461,18 @@
           <label>
             <textarea class="modal-textarea" name="Comment" placeholder="Text input"></textarea>
           </label>
-          <label>
-            <div class="modal-pp">
-            <input class="modal-checkbox" type="checkbox" />
-            <svg class="fake-checkbox-click" width="16" height="16">
-              <use href="./images/icons.svg#icon-checkbox-click" ></use>
-            </svg>
-            <p class="modal-text">I accept the terms and conditions of the <a href="#">Privacy Police</a></p>
+          <div class="modal-checkbox">
+          <input type="checkbox" id="user-privacy" name="user-privacy" value="true" class="modal-check visually-hidden">
+          <label for="user-privacy" class="modal-check-text">
+            <span class="modal-check-icon">
+              <svg class="check-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-checkbox-click"></use>
+              </svg>
+            </span>
+            I accept the terms and conditions of the 
+            <a href="#"> Privacy Policy</a>
           </label>
+          </div>
           <button class="modal-button" type="submit">Send</button>
         </form>
       </div>
